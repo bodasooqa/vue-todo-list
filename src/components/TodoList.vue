@@ -2,7 +2,12 @@
   <div>
     <div class="todo-list">
       <todo-new></todo-new>
-      <todo-item v-for="(todo, i) of todos" :key="i" :todo="todo"></todo-item>
+      <div v-if="todos.length">
+        <todo-item v-for="(todo, i) of todos" :key="i" :todo="todo"></todo-item>
+      </div>
+      <div class="todo-list__empty" v-else>
+        There are no items
+      </div>
     </div>
   </div>
 </template>
@@ -25,5 +30,9 @@
   .todo-list {
     display: flex;
     flex-direction: column;
+
+    &__empty {
+      text-align: center;
+    }
   }
 </style>
