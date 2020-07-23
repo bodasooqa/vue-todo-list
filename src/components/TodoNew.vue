@@ -41,6 +41,7 @@
       > input, > button {
         font-size: 16px;
         outline: none;
+        font-family: Avenir, Helvetica, Arial, sans-serif;
       }
 
       > input {
@@ -58,6 +59,7 @@
         background: $main-color;
         cursor: pointer;
         transition: all .2s;
+        text-transform: uppercase;
 
         &:hover {
           background: lighten($main-color, 10);
