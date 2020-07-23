@@ -6,6 +6,8 @@
 Проект выполнен на Vue.js + TypeScript + SCSS. Для типизации Vuex 
 используется [vuex-smart-module](https://github.com/ktsn/vuex-smart-module).
 
+Демо [тут](https://vue-todo-list.bodasooqa.vercel.app/).
+
 ### Управление проектом
 `yarn install` — Установка зависимостей.
 
