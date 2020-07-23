@@ -21,6 +21,10 @@ class TodoMutations extends Mutations<TodoState> {
   rmTodoById(payload: number) {
     this.state.todos = this.state.todos.filter(item => item.id !== payload);
   }
+
+  addTodo(payload: string) {
+    this.state.todos.push({ title: payload, id: Math.random(), userId: Math.random(), completed: false });
+  }
 }
 
 // Actions

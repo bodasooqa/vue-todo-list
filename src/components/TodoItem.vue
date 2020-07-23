@@ -36,9 +36,14 @@
     padding: .5rem 0;
     border-bottom: 1px solid rgba($main-color, .2);
 
+    &:last-child {
+      border-bottom: none;
+    }
+
     &__title {
       flex: 1;
       margin-left: .5rem;
+      transition: all .2s;
 
       &--completed {
         text-decoration: line-through;
