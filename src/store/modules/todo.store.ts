@@ -1,26 +1,30 @@
-import { Actions, Getters, Module, Mutations, createMapper } from 'vuex-smart-module';
+import { Actions, createMapper, Getters, Module, Mutations } from 'vuex-smart-module';
+import { ITodo } from "@/types";
 
 class TodoState {
-  counter = 10;
+  todos: ITodo[] = [];
 }
 
 // Getters
 class TodoGetters extends Getters<TodoState> {
-  get double() {
-    return this.state.counter * 2;
+  get todos() {
+    return this.state.todos;
   }
 }
 
 // Mutations
 class TodoMutations extends Mutations<TodoState> {
-  incrementBy(payload: number) {
-    this.state.counter += payload;
+  setTodos(payload: ITodo[]) {
+    this.state.todos = payload;
   }
 }
 
 // Actions
 class TodoActions extends Actions<TodoState, TodoGetters, TodoMutations, TodoActions> {
-
+  async getTodos(limit = 5) {
+    const todos = await fetch(`https://jsonplaceholder.typicode.com/todos?_limit=${limit}`);
+    this.commit('setTodos', await todos.json());
+  }
 }
 
 export const todoModule = new Module({

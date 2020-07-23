@@ -1,13 +1,14 @@
 <template>
-    <li>Item {{item}}</li>
+  <li>Item {{item}}</li>
 </template>
 
 <script lang="ts">
-    import { Component, Prop, Vue } from "vue-property-decorator";
+  import { Component, Prop, Vue } from "vue-property-decorator";
+  import { ITodo } from "@/types";
 
   @Component
   export default class TodoItem extends Vue {
-      @Prop() private item!: number;
+    @Prop() private todo!: ITodo;
   }
 </script>
 

@@ -1,19 +1,21 @@
 <template>
   <div>
     <ul>
-      <todo-item v-for="(item, i) of 10" :key="i" :item="item"></todo-item>
+      <todo-item v-for="(todo, i) of todos" :key="i" :todo="todo"></todo-item>
     </ul>
   </div>
 </template>
 
 <script lang="ts">
-  import { Component, Vue } from "vue-property-decorator";
+  import { Component, Prop, Vue } from "vue-property-decorator";
   import TodoItem from "@/components/TodoItem.vue";
+  import { ITodo } from "@/types";
 
   @Component({
     components: { TodoItem }
   })
   export default class TodoList extends Vue {
+    @Prop() private todos!: ITodo[];
   }
 </script>
 
