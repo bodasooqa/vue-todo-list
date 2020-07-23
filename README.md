@@ -1,24 +1,16 @@
-# vue-crash
+## Todo List
 
-## Project setup
-```
-yarn install
-```
+Приложение представляет из себя простой ToDo-лист с возможностью удаления
+добавления и выполнения задач. Данные получаются с фейкового REST API.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Проект выполнен на Vue.js + TypeScript + SCSS. Для типизации Vuex 
+используется [vuex-smart-module](https://github.com/ktsn/vuex-smart-module).
 
-### Compiles and minifies for production
-```
-yarn build
-```
+### Управление проектом
+`yarn install` — Установка зависимостей.
 
-### Lints and fixes files
-```
-yarn lint
-```
+`yarn serve` — Dev-сервер.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`yarn build` — Сборка приложения.
+
+`yarn lint` — Линтер.
