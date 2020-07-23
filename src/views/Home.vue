@@ -25,3 +25,18 @@ export default class Home extends HomeProps {
   }
 }
 </script>
+
+<style lang="scss">
+  .home {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 10px 30px -10px rgb(0 0 0 / 25%);
+
+    > h1 {
+      text-align: center;
+      margin: 1rem auto;
+    }
+  }
+</style>

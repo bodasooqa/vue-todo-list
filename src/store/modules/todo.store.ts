@@ -17,6 +17,10 @@ class TodoMutations extends Mutations<TodoState> {
   setTodos(payload: ITodo[]) {
     this.state.todos = payload;
   }
+
+  rmTodoById(payload: number) {
+    this.state.todos = this.state.todos.filter(item => item.id !== payload);
+  }
 }
 
 // Actions

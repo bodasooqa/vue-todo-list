@@ -1,8 +1,8 @@
 <template>
   <div>
-    <ul>
+    <div class="todo-list">
       <todo-item v-for="(todo, i) of todos" :key="i" :todo="todo"></todo-item>
-    </ul>
+    </div>
   </div>
 </template>
 
@@ -19,6 +19,9 @@
   }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+  }
 </style>
