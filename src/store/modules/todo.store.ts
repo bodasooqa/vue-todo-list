@@ -1,21 +1,24 @@
-import { Actions, Getters, Module, Mutations } from 'vuex-smart-module';
+import { Actions, Getters, Module, Mutations, createMapper } from 'vuex-smart-module';
 
 class TodoState {
-  counter: number = 10;
+  counter = 10;
 }
 
+// Getters
 class TodoGetters extends Getters<TodoState> {
   get double() {
     return this.state.counter * 2;
   }
 }
 
+// Mutations
 class TodoMutations extends Mutations<TodoState> {
   incrementBy(payload: number) {
     this.state.counter += payload;
   }
 }
 
+// Actions
 class TodoActions extends Actions<TodoState, TodoGetters, TodoMutations, TodoActions> {
 
 }
@@ -25,4 +28,6 @@ export const todoModule = new Module({
   getters: TodoGetters,
   mutations: TodoMutations,
   actions: TodoActions
-})
+});
+
+export const todoMapper = createMapper(todoModule);

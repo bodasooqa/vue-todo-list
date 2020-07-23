@@ -5,13 +5,22 @@
   </div>
 </template>
 
-<script>
-import TodoList from "@/components/TodoList";
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import TodoList from "@/components/TodoList.vue";
+import { todoMapper } from "@/store/modules/todo.store";
 
-export default {
-  name: 'Home',
-  components: {
-    TodoList
+
+const HomeProps = Vue.extend({
+  computed: todoMapper.mapGetters(['double'])
+});
+
+@Component({
+  components: { TodoList }
+})
+export default class Home extends HomeProps {
+  mounted() {
+    console.log('mounted', this.double);
   }
 }
 </script>
